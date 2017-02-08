@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="000"
-        android:textSize="40sp"
+        android:textSize="50sp"
         android:layout_marginTop="20dp"/>
 
     <TextView
@@ -22,21 +22,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="High Score : 000"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GAME OVER"
-        android:textSize="30sp"
+        android:textSize="50sp"
         android:id="@+id/textOver"
         android:layout_below="@+id/scoreLabel"
         android:layout_alignLeft="@+id/button"
         android:layout_alignStart="@+id/button"
-        android:layout_marginTop="86dp" />
+        android:layout_marginTop="76dp" />
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Again?"
+        android:textSize="40sp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/again"
+        android:textColor="#C70039"
+        android:onClick="again"/>
 
 
 </LinearLayout>

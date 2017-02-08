@@ -326,6 +326,7 @@ public class main extends AppCompatActivity {
             timer = null;
 
             //show result
+
             Intent intent =  new Intent(getApplicationContext(), result.class);
             intent.putExtra("SCORE", score);
             startActivity(intent);

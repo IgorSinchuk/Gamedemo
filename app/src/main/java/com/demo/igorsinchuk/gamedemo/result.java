@@ -8,12 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 
 public class result extends AppCompatActivity {
 
     private TextView textOver;
+    private TextView again;
 
     //font
     Typeface tp;
@@ -25,14 +27,18 @@ public class result extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
 
-
         TextView scoreLabel = (TextView) findViewById(R.id.scoreLabel);
         TextView highScoreLabel = (TextView) findViewById(R.id.highScoreLabel);
         textOver = (TextView) findViewById(R.id.textOver);
+        again = (TextView) findViewById(R.id.again);
+
 
         //custom font
         tp = Typeface.createFromAsset(getAssets(), "ARCADECLASSIC.TTF");
         textOver.setTypeface(tp);
+        scoreLabel.setTypeface(tp);
+        highScoreLabel.setTypeface(tp);
+        again.setTypeface(tp);
 
         int score = getIntent().getIntExtra("SCORE", 0);
         scoreLabel.setText(score + "");
@@ -53,9 +59,16 @@ public class result extends AppCompatActivity {
         }
     }
 
-    public void textView(View view) {
+    //textButton
+    public void again(View view) {
         startActivity(new Intent(getApplicationContext(), start.class));
     }
+    /*//animation
+    public void blink (View view) {
+        android.view.animation.Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+        textOver.startAnimation(animation);
+    }
+    **/
 
 
     //disable return btn
