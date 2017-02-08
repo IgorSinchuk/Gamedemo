@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#17195A"
+    android:gravity="center"
+    tools:context="com.demo.igorsinchuk.gamedemo.main">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="475dp">
+
+        <TextView
+            android:textColor="#000"
+            android:id="@+id/startLabel"
+            android:layout_width="match_parent"
+            android:layout_height="477dp"
+            android:text="Tap to start"
+            android:textSize="30sp"
+            android:gravity="center" />
+
+
+
+
+        <ImageView
+            android:id="@+id/black"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/blackstart"/>
+
+        <ImageView
+            android:id="@+id/magic"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/magicstart"/>
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/star"/>
+
+        <ImageView
+            android:id="@+id/planet"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:src="@drawable/planet"/>
+
+
+        <ImageView
+            android:id="@+id/planet2"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/planet2"/>
+
+        <ImageView
+            android:id="@+id/planet3"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/planet3"/>
+
+        <ImageView
+            android:id="@+id/planet4"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/planet4"/>
+
+        <ImageView
+            android:id="@+id/planet5"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/planet5"/>
+
+        <ImageView
+            android:id="@+id/bstar1"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/bstar1"/>
+
+        <ImageView
+            android:id="@+id/bstar2"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/bstar2"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/plane"
+            android:id="@+id/rocket"
+            android:layout_gravity="bottom" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/scoreBar"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#9CA2A2"
+        android:weightSum="3">
+
+
+        <TextView
+            android:id="@+id/scoreLabel"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Score : 000"
+            android:textSize="70sp"
+            android:paddingLeft="10dp"
+            android:gravity="bottom"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+
+
