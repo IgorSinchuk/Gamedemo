@@ -110,9 +110,7 @@ public class main extends AppCompatActivity {
 
 
         rocket = (ImageView) findViewById(R.id.rocket);
-        star = (ImageView) findViewById(R.id.star);
-        magic = (ImageView) findViewById(R.id.magic);
-        black = (ImageView) findViewById(R.id.black);
+
 
         planet = (ImageView) findViewById(R.id.planet);
         planet2 = (ImageView) findViewById(R.id.planet2);
@@ -137,14 +135,7 @@ public class main extends AppCompatActivity {
         screenHeight = size.y;
 
         //move to out of screen
-        star.setX(-80f);
-        star.setY(-80f);
 
-        magic.setX(-80f);
-        magic.setY(-80f);
-
-        black.setX(-80f);
-        black.setY(-80f);
 
         planet.setX(-80f);
         planet.setY(-80f);
@@ -172,33 +163,7 @@ public class main extends AppCompatActivity {
 
         hitCheck();
 
-        // star
-        starX -= 12;
-        if (starX <0) {
-            starX = screenWidth + 20;
-            starY = (int) Math.floor(Math.random() * (frameHeight - star.getHeight()));
-        }
-        star.setX(starX);
-        star.setY(starY);
 
-        //magic
-
-        magicX -= 16;
-        if (magicX <0) {
-            magicX = screenWidth + 10;
-            magicY = (int) Math.floor(Math.random() * (frameHeight - magic.getHeight()));
-        }
-        magic.setX(magicX);
-        magic.setY(magicY);
-
-        //black
-        blackX -= 20;
-        if (blackX < 0) {
-            blackX = screenWidth + 5000;
-            blackY = (int) Math.floor(Math.random() * (frameHeight - black.getHeight()));
-        }
-        black.setX(blackX);
-        black.setY(blackY);
 
 
         //background objects
@@ -292,7 +257,7 @@ public class main extends AppCompatActivity {
         //hitbox
         //star
 
-        int starCenterX = starX + star.getWidth() / 2;
+        /*int starCenterX = starX + star.getWidth() / 2;
         int starCenterY = starY + star.getHeight() / 2;
 
         if (0 <= starCenterX && starCenterX <= rocketSize &&
@@ -331,6 +296,7 @@ public class main extends AppCompatActivity {
             intent.putExtra("SCORE", score);
             startActivity(intent);
         }
+        **/
 
     }
 

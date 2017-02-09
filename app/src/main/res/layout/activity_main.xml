@@ -24,25 +24,17 @@
             android:gravity="center" />
 
 
-
-
-        <ImageView
-            android:id="@+id/black"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/blackstart"/>
-
         <ImageView
             android:id="@+id/magic"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/magicstart"/>
+            android:src="@drawable/spacecoinred"/>
 
         <ImageView
-            android:id="@+id/star"
+            android:id="@+id/coin2"
             android:layout_width="16dp"
             android:layout_height="16dp"
-            android:src="@drawable/star"/>
+            android:src="@drawable/spacecoin"/>
 
         <ImageView
             android:id="@+id/planet"
@@ -88,9 +80,9 @@
             android:src="@drawable/bstar2"/>
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/plane"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:src="@drawable/playerd"
             android:id="@+id/rocket"
             android:layout_gravity="bottom" />
 
@@ -115,11 +107,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Score : 000"
-            android:textSize="70sp"
+            android:textSize="60sp"
             android:paddingLeft="10dp"
             android:gravity="bottom"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1" />
     </LinearLayout>
 
 
