@@ -119,6 +119,7 @@ public class main extends AppCompatActivity {
         //custom font
         tp = Typeface.createFromAsset(getAssets(), "ARCADECLASSIC.TTF");
         scoreLabel.setTypeface(tp);
+        startLabel.setTypeface(tp);
 
         //get screen size
         WindowManager wm = getWindowManager();

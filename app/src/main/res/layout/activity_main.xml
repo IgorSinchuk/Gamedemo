@@ -15,7 +15,7 @@
         android:layout_height="475dp">
 
         <TextView
-            android:textColor="#000"
+            android:textColor="#fff"
             android:id="@+id/startLabel"
             android:layout_width="match_parent"
             android:layout_height="477dp"
@@ -97,14 +97,14 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#9CA2A2"
+        android:background="#000"
         android:weightSum="3">
 
 
         <TextView
             android:id="@+id/scoreLabel"
-            android:textColor="#000"
-            android:layout_width="match_parent"
+            android:textColor="#fff"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Score : 000"
             android:textSize="60sp"

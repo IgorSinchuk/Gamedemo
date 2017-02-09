@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#000"
-    tools:context="com.demo.igorsinchuk.gamedemo.info">
+    tools:context="com.demo.igorsinchuk.gamedemo.info"
+    android:weightSum="1">
 
 
     <TextView
@@ -22,7 +23,9 @@
     <TextView
         android:id="@+id/info"
         android:text="
-So. Your target was to reach the tiny planet at the abyss of space. But after long time of traveling you realized that it is impossible.Destination still the same that it was before. Your native planet is billions miles away.
+So. Your target was to reach the tiny planet at the abyss of space. But after long time of traveling you realized that it is impossible.Destination still the
+same that it was before. Your
+native planet is billions miles away.
 Where are you? "
         android:textSize="30sp"
         android:textColor="#fff"
@@ -39,12 +42,10 @@ Where are you? "
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_marginBottom="48dp"
         android:textColor="#fff"
         android:textSize="20sp"
-        android:onClick="back"/>
+        android:onClick="back"
+        android:layout_weight="0.26" />
 
 </LinearLayout>
