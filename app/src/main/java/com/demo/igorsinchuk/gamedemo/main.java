@@ -56,12 +56,7 @@ public class main extends AppCompatActivity {
     //position
 
     private int rocketY;
-    private int starX;
-    private int starY;
-    private int blackX;
-    private int blackY;
-    private int magicX;
-    private int magicY;
+
 
 
     private int planetX;
@@ -192,8 +187,8 @@ public class main extends AppCompatActivity {
             planet3X = screenWidth + 410;
             planet3Y = (int) Math.floor(Math.random() * (frameHeight - planet3.getHeight()));
         }
-        planet3.setX(planetX);
-        planet3.setY(planetY);
+        planet3.setX(planet3X);
+        planet3.setY(planet3Y);
 
 
         planet4X -= 4;
