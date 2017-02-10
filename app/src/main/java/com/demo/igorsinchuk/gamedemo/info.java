@@ -19,7 +19,7 @@ public class info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        info = (TextView) findViewById(R.id.info);
+        info = (TextView) findViewById(R.id.about);
         about = (TextView) findViewById(R.id.about);
         back = (TextView) findViewById(R.id.back);
 

@@ -1,10 +1,8 @@
 package com.demo.igorsinchuk.gamedemo;
 
 
-import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
-import android.media.Image;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -224,13 +222,16 @@ public class main extends AppCompatActivity {
         planet3.setY(planet3Y);
 
 
-        planet5X -= 7;
+        planet5X -= 2;
         if (planet5X < 0) {
             planet5X = screenWidth + 20;
             planet5Y = (int) Math.floor(Math.random() * (frameHeight - planet5.getHeight()));
         }
         planet5.setX(planet5X);
         planet5.setY(planet5Y);
+
+
+
 
         //stars
 

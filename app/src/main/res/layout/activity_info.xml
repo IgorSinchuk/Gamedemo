@@ -21,7 +21,7 @@
 
 
     <TextView
-        android:id="@+id/info"
+        android:id="@+id/about"
         android:text="
 So. Your target was to reach the tiny planet at the abyss of space. But after long time of traveling you realized that it is impossible.Destination still the
 same that it was before. Your
