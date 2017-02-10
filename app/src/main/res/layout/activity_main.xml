@@ -45,21 +45,16 @@
 
         <ImageView
             android:id="@+id/planet2"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/planet2"/>
 
         <ImageView
             android:id="@+id/planet3"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:src="@drawable/planet3"/>
 
-        <ImageView
-            android:id="@+id/planet4"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/planet4"/>
 
         <ImageView
             android:id="@+id/planet5"
@@ -68,16 +63,46 @@
             android:src="@drawable/planet5"/>
 
         <ImageView
-            android:id="@+id/bstar1"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/bstar1"/>
+            android:id="@+id/meteor"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/meteor"/>
 
         <ImageView
-            android:id="@+id/bstar2"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:src="@drawable/bstar2"/>
+            android:id="@+id/backstar"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/backstar"/>
+
+        <ImageView
+            android:id="@+id/backstar2"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/backstar2"/>
+
+        <ImageView
+            android:id="@+id/backstar3"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/backstar3"/>
+
+        <ImageView
+            android:id="@+id/backstar4"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/backstar4"/>
+
+        <ImageView
+            android:id="@+id/backstar5"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/backstar5"/>
+
+        <ImageView
+            android:id="@+id/backstar6"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:src="@drawable/backstar6"/>
 
         <ImageView
             android:layout_width="80dp"

@@ -4,6 +4,7 @@ package com.demo.igorsinchuk.gamedemo;
 import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,19 +32,22 @@ public class main extends AppCompatActivity {
 
 
     private ImageView rocket;
-    private ImageView star;
-    private ImageView magic;
-    private ImageView black;
+
 
     //background
     private ImageView planet;
     private ImageView planet2;
     private ImageView planet3;
-    private ImageView planet4;
     private ImageView planet5;
 
-    private ImageView bstar1;
-    private ImageView bstar2;
+    private ImageView backstar;
+    private ImageView backstar2;
+    private ImageView backstar3;
+    private ImageView backstar4;
+    private ImageView backstar5;
+    private ImageView backstar6;
+
+    private ImageView meteor;
 
     //size
     private int frameHeight;
@@ -65,14 +69,23 @@ public class main extends AppCompatActivity {
     private int planet2Y;
     private int planet3X;
     private int planet3Y;
-    private int planet4X;
-    private int planet4Y;
     private int planet5X;
     private int planet5Y;
-    private int bstar1X;
-    private int bstar1Y;
-    private int bstar2X;
-    private int bstar2Y;
+
+    private int backstarX;
+    private int backstarY;
+    private int backstar2X;
+    private int backstar2Y;
+    private int backstar3X;
+    private int backstar3Y;
+    private int backstar4X;
+    private int backstar4Y;
+    private int backstar5X;
+    private int backstar5Y;
+
+    private int meteorX;
+    private int meteorY;
+
 
 
     //score
@@ -110,11 +123,18 @@ public class main extends AppCompatActivity {
         planet = (ImageView) findViewById(R.id.planet);
         planet2 = (ImageView) findViewById(R.id.planet2);
         planet3 = (ImageView) findViewById(R.id.planet3);
-        planet4 = (ImageView) findViewById(R.id.planet4);
         planet5 = (ImageView) findViewById(R.id.planet5);
 
-        bstar1 = (ImageView) findViewById(R.id.bstar1);
-        bstar2 = (ImageView) findViewById(R.id.bstar2);
+        backstar = (ImageView) findViewById(R.id.backstar);
+        backstar2 = (ImageView) findViewById(R.id.backstar2);
+        backstar3 = (ImageView) findViewById(R.id.backstar3);
+        backstar4 = (ImageView) findViewById(R.id.backstar4);
+        backstar5 = (ImageView) findViewById(R.id.backstar5);
+        backstar6 = (ImageView) findViewById(R.id.backstar6);
+
+        meteor = (ImageView) findViewById(R.id.meteor);
+
+
 
         //custom font
         tp = Typeface.createFromAsset(getAssets(), "ARCADECLASSIC.TTF");
@@ -130,24 +150,36 @@ public class main extends AppCompatActivity {
         screenWidth = size.x;
         screenHeight = size.y;
 
+
+
         //move to out of screen
-
-
         planet.setX(-80f);
         planet.setY(-80f);
         planet2.setX(-80f);
         planet2.setY(-80f);
         planet3.setX(-80f);
         planet3.setY(-80f);
-        planet4.setX(-80f);
-        planet4.setY(-80f);
         planet5.setX(-80f);
         planet5.setY(-80f);
 
-        bstar1.setX(-80f);
-        bstar1.setY(-80f);
-        bstar2.setX(-80f);
-        bstar2.setY(-80f);
+        backstar.setX(-80f);
+        backstar.setY(-80f);
+        backstar2.setX(-80f);
+        backstar2.setY(-80f);
+        backstar3.setX(-80f);
+        backstar3.setY(-80f);
+        backstar4.setX(-80f);
+        backstar4.setY(-80f);
+        backstar5.setX(-80f);
+        backstar5.setY(-80f);
+        backstar6.setX(-80f);
+        backstar6.setY(-80f);
+
+        meteor.setX(-80f);
+        meteor.setY(-80f);
+
+
+
 
         scoreLabel.setText("Score : 0");
 
@@ -163,7 +195,7 @@ public class main extends AppCompatActivity {
 
 
         //background objects
-
+        //planets
         planetX -= 4;
         if (planetX < 0) {
             planetX = screenWidth + 510;
@@ -174,31 +206,22 @@ public class main extends AppCompatActivity {
 
 
 
-        planet2X -= 20;
+        planet2X -= 6;
         if (planet2X < 0) {
-            planet2X = screenWidth + 210;
+            planet2X = screenWidth + 810;
             planet2Y = (int) Math.floor(Math.random() * (frameHeight - planet2.getHeight()));
         }
         planet2.setX(planet2X);
         planet2.setY(planet2Y);
 
 
-        planet3X -= 80;
+        planet3X -= 1;
         if (planet3X < 0) {
             planet3X = screenWidth + 410;
             planet3Y = (int) Math.floor(Math.random() * (frameHeight - planet3.getHeight()));
         }
         planet3.setX(planet3X);
         planet3.setY(planet3Y);
-
-
-        planet4X -= 4;
-        if (planet4X < 0) {
-            planet4X = screenWidth + 510;
-            planet4Y = (int) Math.floor(Math.random() * (frameHeight - planet4.getHeight()));
-        }
-        planet4.setX(planet4X);
-        planet4.setY(planet4Y);
 
 
         planet5X -= 7;
@@ -209,22 +232,8 @@ public class main extends AppCompatActivity {
         planet5.setX(planet5X);
         planet5.setY(planet5Y);
 
+        //stars
 
-        bstar1X -= 3;
-        if (bstar1X < 0) {
-            bstar1X = screenWidth + 30;
-            bstar1Y = (int) Math.floor(Math.random() * (frameHeight - bstar1.getHeight()));
-        }
-        bstar1.setX(bstar1X);
-        bstar1.setY(bstar1Y);
-
-        bstar2X -= 4;
-        if (bstar2X < 0) {
-            bstar2X = screenWidth + 510;
-            bstar2Y = (int) Math.floor(Math.random() * (frameHeight - bstar2.getHeight()));
-        }
-        bstar2.setX(bstar2X);
-        bstar2.setY(bstar2Y);
 
 
 
@@ -250,49 +259,7 @@ public class main extends AppCompatActivity {
     }
 
     public void hitCheck() {
-        //hitbox
-        //star
 
-        /*int starCenterX = starX + star.getWidth() / 2;
-        int starCenterY = starY + star.getHeight() / 2;
-
-        if (0 <= starCenterX && starCenterX <= rocketSize &&
-                rocketY <= starCenterY && starCenterY <= rocketY + rocketSize) {
-
-            score += 10;
-            starX = -10;
-        }
-
-        //magic
-
-        int magicCenterX = magicX + magic.getWidth() / 2;
-        int magicCenterY = magicY + magic.getHeight() / 2;
-
-        if (0 <= magicCenterX && magicCenterX <= rocketSize &&
-                rocketY <= magicCenterY && magicCenterY <= rocketY + rocketSize) {
-
-            score += 30;
-            magicX = -10;
-        }
-
-
-        int blackCenterX = blackX + black.getWidth()/2;
-        int blackCenterY = blackY + black.getHeight()/2;
-
-        if (0 <= blackCenterX && blackCenterX <= rocketSize &&
-                rocketY <= blackCenterY && blackCenterY <= rocketY + rocketSize) {
-
-            //stop timer
-            timer.cancel();
-            timer = null;
-
-            //show result
-
-            Intent intent =  new Intent(getApplicationContext(), result.class);
-            intent.putExtra("SCORE", score);
-            startActivity(intent);
-        }
-        **/
 
     }
 
