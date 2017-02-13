@@ -47,6 +47,9 @@ public class main extends AppCompatActivity {
 
     private ImageView meteor;
 
+    private ImageView spacecoin;
+    private ImageView spacecoinred;
+
     //size
     private int frameHeight;
     private int rocketSize;
@@ -83,6 +86,11 @@ public class main extends AppCompatActivity {
 
     private int meteorX;
     private int meteorY;
+
+    private int spacecoinX;
+    private int spacecoinY;
+    private int spacecoinredX;
+    private int spacecoinredY;
 
 
 
@@ -132,6 +140,9 @@ public class main extends AppCompatActivity {
 
         meteor = (ImageView) findViewById(R.id.meteor);
 
+        spacecoin = (ImageView) findViewById(R.id.spacecoin);
+        spacecoinred = (ImageView) findViewById(R.id.spacecoinred);
+
 
 
         //custom font
@@ -175,6 +186,11 @@ public class main extends AppCompatActivity {
 
         meteor.setX(-80f);
         meteor.setY(-80f);
+
+        spacecoin.setX(-80f);
+        spacecoin.setY(-80f);
+        spacecoinred.setX(-80f);
+        spacecoinred.setY(-80f);
 
 
 
@@ -232,9 +248,32 @@ public class main extends AppCompatActivity {
 
 
 
+        //death object
+        meteorX -=25;
+        if (meteorX < 0) {
+            meteorX = screenWidth + 500;
+            meteorY = (int) Math.floor(Math.random() * (frameHeight - meteor.getHeight()));
+        }
+        meteor.setX(meteorX);
+        meteor.setY(meteorY);
 
-        //stars
 
+        //score objects
+        spacecoinX -=20;
+        if (spacecoinX < 0) {
+            spacecoinX = screenWidth + 10;
+            spacecoinY = (int) Math.floor(Math.random() * (frameHeight - spacecoin.getHeight()));
+        }
+        spacecoin.setX(spacecoinX);
+        spacecoin.setY(spacecoinY);
+
+        spacecoinredX -=20;
+        if (spacecoinredX < 0) {
+            spacecoinredX = screenWidth + 3000;
+            spacecoinredY = (int) Math.floor(Math.random() * (frameHeight - spacecoinred.getHeight()));
+        }
+        spacecoinred.setX(spacecoinredX);
+        spacecoinred.setY(spacecoinredY);
 
 
 

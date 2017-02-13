@@ -27,7 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="197dp" />
+        android:layout_marginBottom="197dp"
+        android:onClick="about"/>
 
     <TextView
         android:gravity="center"
@@ -40,7 +41,8 @@
         android:layout_marginBottom="78dp"
         android:layout_above="@+id/about"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="startGame"/>
 
 </RelativeLayout>
 

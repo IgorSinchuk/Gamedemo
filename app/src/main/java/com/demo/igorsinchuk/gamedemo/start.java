@@ -1,10 +1,12 @@
 package com.demo.igorsinchuk.gamedemo;
 
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.TextView;
 
 public class start extends AppCompatActivity {
@@ -24,8 +26,15 @@ public class start extends AppCompatActivity {
         tf = Typeface.createFromAsset(getAssets(), "ARCADECLASSIC.TTF");
         startGame.setTypeface(tf);
         about.setTypeface(tf);
+    }
+
+        public void startGame(View view) {
+            startActivity(new Intent(getApplicationContext(), main.class));
+    }
 
 
+    public void about(View view) {
+        startActivity(new Intent(getApplicationContext(), info.class));
     }
 
 
