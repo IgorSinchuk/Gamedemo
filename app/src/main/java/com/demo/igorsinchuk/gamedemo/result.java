@@ -60,7 +60,7 @@ public class result extends AppCompatActivity {
 
     //textButton
     public void again(View view) {
-        startActivity(new Intent(getApplicationContext(), start.class));
+        startActivity(new Intent(getApplicationContext(), main.class));
     }
     /*//animation
     public void blink (View view) {

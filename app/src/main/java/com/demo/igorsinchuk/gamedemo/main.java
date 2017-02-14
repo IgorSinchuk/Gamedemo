@@ -1,6 +1,7 @@
 package com.demo.igorsinchuk.gamedemo;
 
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -50,6 +51,8 @@ public class main extends AppCompatActivity {
     private ImageView spacecoin;
     private ImageView spacecoinred;
 
+    private ImageView powerup;
+
     //size
     private int frameHeight;
     private int rocketSize;
@@ -57,11 +60,9 @@ public class main extends AppCompatActivity {
     private int screenHeight;
 
 
-
     //position
 
     private int rocketY;
-
 
 
     private int planetX;
@@ -92,6 +93,8 @@ public class main extends AppCompatActivity {
     private int spacecoinredX;
     private int spacecoinredY;
 
+    private int powerupX;
+    private int powerupY;
 
 
     //score
@@ -101,12 +104,12 @@ public class main extends AppCompatActivity {
     Typeface tp;
 
 
-
-
-
     //initialize class
     private Handler handler = new Handler();
     private Timer timer = new Timer();
+
+    //music (sfx)
+    private music sfx;
 
     //static check
     private boolean actionFlag = false;
@@ -118,9 +121,10 @@ public class main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sfx = new music(this);
+
         scoreLabel = (TextView) findViewById(R.id.scoreLabel);
         startLabel = (TextView) findViewById(R.id.startLabel);
-
 
 
         rocket = (ImageView) findViewById(R.id.rocket);
@@ -143,6 +147,7 @@ public class main extends AppCompatActivity {
         spacecoin = (ImageView) findViewById(R.id.spacecoin);
         spacecoinred = (ImageView) findViewById(R.id.spacecoinred);
 
+        powerup = (ImageView) findViewById(R.id.powerup);
 
 
         //custom font
@@ -158,7 +163,6 @@ public class main extends AppCompatActivity {
 
         screenWidth = size.x;
         screenHeight = size.y;
-
 
 
         //move to out of screen
@@ -192,20 +196,18 @@ public class main extends AppCompatActivity {
         spacecoinred.setX(-80f);
         spacecoinred.setY(-80f);
 
-
+        powerup.setX(-80f);
+        powerup.setY(-80f);
 
 
         scoreLabel.setText("Score : 0");
 
 
-
     }
 
-    public void changePos(){
+    public void changePos() {
 
         hitCheck();
-
-
 
 
         //background objects
@@ -217,7 +219,6 @@ public class main extends AppCompatActivity {
         }
         planet.setX(planetX);
         planet.setY(planetY);
-
 
 
         planet2X -= 6;
@@ -247,11 +248,10 @@ public class main extends AppCompatActivity {
         planet5.setY(planet5Y);
 
 
-
-        //death object
-        meteorX -=25;
+        //death object meteor
+        meteorX -= 25;
         if (meteorX < 0) {
-            meteorX = screenWidth + 500;
+            meteorX = screenWidth + 700;
             meteorY = (int) Math.floor(Math.random() * (frameHeight - meteor.getHeight()));
         }
         meteor.setX(meteorX);
@@ -259,7 +259,7 @@ public class main extends AppCompatActivity {
 
 
         //score objects
-        spacecoinX -=20;
+        spacecoinX -= 20;
         if (spacecoinX < 0) {
             spacecoinX = screenWidth + 10;
             spacecoinY = (int) Math.floor(Math.random() * (frameHeight - spacecoin.getHeight()));
@@ -267,7 +267,7 @@ public class main extends AppCompatActivity {
         spacecoin.setX(spacecoinX);
         spacecoin.setY(spacecoinY);
 
-        spacecoinredX -=20;
+        spacecoinredX -= 18;
         if (spacecoinredX < 0) {
             spacecoinredX = screenWidth + 3000;
             spacecoinredY = (int) Math.floor(Math.random() * (frameHeight - spacecoinred.getHeight()));
@@ -275,21 +275,26 @@ public class main extends AppCompatActivity {
         spacecoinred.setX(spacecoinredX);
         spacecoinred.setY(spacecoinredY);
 
-
-
+        powerupX -= 48;
+        if (powerupX < 0) {
+            powerupX = screenWidth + 6000;
+            powerupY = (int) Math.floor(Math.random() * (frameHeight - powerup.getHeight()));
+        }
+        powerup.setX(powerupX);
+        powerup.setY(powerupY);
 
 
         //move rocket
-        if (actionFlag ==true) {
+        if (actionFlag == true) {
             //touching
-            rocketY -=20;
+            rocketY -= 20;
         } else {
             //releasing
-            rocketY +=20;
+            rocketY += 20;
         }
 
         //check rocket position
-        if (rocketY <0) rocketY = 0;
+        if (rocketY < 0) rocketY = 0;
 
         if (rocketY > frameHeight - rocketSize) rocketY = frameHeight - rocketSize;
 
@@ -300,10 +305,69 @@ public class main extends AppCompatActivity {
 
     public void hitCheck() {
 
+        //spaceCoin
+
+        int starCenterX = spacecoinX + spacecoin.getWidth() / 2;
+        int starCenterY = spacecoinY + spacecoin.getHeight() / 2;
+
+        if (0 <= starCenterX && starCenterX <= rocketSize &&
+                rocketY <= starCenterY && starCenterY <= rocketY + rocketSize) {
+
+            score += 10;
+            spacecoinX = -20;
+            sfx.playHitSound();
+        }
+
+        //spacecoinRed
+
+        int magicCenterX = spacecoinredX + spacecoinred.getWidth() / 2;
+        int magicCenterY = spacecoinredY + spacecoinred.getHeight() / 2;
+
+        if (0 <= magicCenterX && magicCenterX <= rocketSize &&
+                rocketY <= magicCenterY && magicCenterY <= rocketY + rocketSize) {
+
+            score += 30;
+            spacecoinredX = -10;
+            sfx.playHitSound();
+        }
+
+        //powerUP
+        int powerCenterX = powerupX + powerup.getWidth() / 2;
+        int powerCenterY = powerupY + powerup.getHeight() / 2;
+
+        if (0 <= powerCenterX && powerCenterX <= rocketSize &&
+                rocketY <= powerCenterY && powerCenterY <= rocketY + rocketSize) {
+
+            //stop timer
+            score += 70;
+            powerCenterX = -10;
+            sfx.playPowerupSound();
+        }
+
+        //meteor
+        int blackCenterX = meteorX + meteor.getWidth() / 2;
+        int blackCenterY = meteorY + meteor.getHeight() / 2;
+
+        if (0 <= blackCenterX && blackCenterX <= rocketSize &&
+                rocketY <= blackCenterY && blackCenterY <= rocketY + rocketSize) {
+
+            //stop timer
+            timer.cancel();
+            timer = null;
+            sfx.playOverSound();
+
+
+            //show result
+            Intent intent = new Intent(getApplicationContext(), result.class);
+            intent.putExtra("SCORE", score);
+            startActivity(intent);
+        }
 
     }
 
-    //onTouch
+
+
+    //onTouch evnt
     public boolean onTouchEvent(MotionEvent me) {
         if (startFlag == false) {
 
@@ -318,6 +382,7 @@ public class main extends AppCompatActivity {
             rocketSize = rocket.getHeight();
 
             startLabel.setVisibility(View.GONE);
+            sfx.playStartSound();
 
             timer.schedule(new TimerTask() {
                 @Override

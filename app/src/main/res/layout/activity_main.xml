@@ -109,6 +109,13 @@
             android:layout_height="13dp"
             android:src="@drawable/spacecoinred"/>
 
+        <ImageView
+            android:id="@+id/powerup"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:src="@drawable/powerup"/>
+
+
 
 
         <ImageView
