@@ -1,4 +1,4 @@
-package com.demo.igorsinchuk.gamedemo;
+package com.demo.igorsinchuk.game;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

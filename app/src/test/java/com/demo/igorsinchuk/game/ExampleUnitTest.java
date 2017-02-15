@@ -1,4 +1,4 @@
-package com.demo.igorsinchuk.gamedemo;
+package com.demo.igorsinchuk.game;
 
 import org.junit.Test;
 

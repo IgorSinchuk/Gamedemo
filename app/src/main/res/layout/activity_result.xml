@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#000"
-    tools:context="com.demo.igorsinchuk.gamedemo.result">
+    tools:context="com.demo.igorsinchuk.game.result">
 
     <TextView
         android:id="@+id/scoreLabel"

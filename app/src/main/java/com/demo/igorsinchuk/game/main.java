@@ -1,4 +1,4 @@
-package com.demo.igorsinchuk.gamedemo;
+package com.demo.igorsinchuk.game;
 
 
 import android.content.Intent;
@@ -96,6 +96,19 @@ public class main extends AppCompatActivity {
     private int powerupX;
     private int powerupY;
 
+    //speed
+    /**private int rocketSpeed;
+    private int planetSpeed;
+    private int planet2Speed;
+    private int planet3Speed;
+    private int planet5Speed;
+    private int meteorSpeed;
+    private int spacecoinSpeed;
+    private int spacecoinredSpeed;
+    private int powerupSpeed;
+     */
+
+
 
     //score
     private int score = 0;
@@ -163,6 +176,30 @@ public class main extends AppCompatActivity {
 
         screenWidth = size.x;
         screenHeight = size.y;
+
+        //Nexus 4 width:768 height:1184
+
+        /**rocketSpeed = Math.round(screenHeight/60f);
+        planetSpeed= Math.round(screenWidth/60f);
+        planet2Speed = Math.round(screenWidth/60f);
+        planet3Speed = Math.round(screenWidth/60f);
+        planet5Speed = Math.round(screenWidth/60f);
+        spacecoinSpeed = Math.round(screenWidth/60f);
+        spacecoinredSpeed = Math.round(screenWidth/60f);
+        meteorSpeed = Math.round(screenWidth/60f);
+        powerupSpeed = Math.round(screenWidth/60f);
+
+        Log.v("SPEED_ROCKET", rocketSpeed+"");
+        Log.v("SPEED_PLANET", planetSpeed+"");
+        Log.v("SPEED_PLANET2", planet2Speed+"");
+        Log.v("SPEED_PLANET3", planet3Speed+"");
+        Log.v("SPEED_PLANET5", planet5Speed+"");
+        Log.v("SPEED_SPACECOIN", spacecoinSpeed+"");
+        Log.v("SPEED_SPACECOINRED", spacecoinredSpeed+"");
+        Log.v("SPEED_METEOR", meteorSpeed+"");
+        Log.v("SPEED_POWERUP", powerupSpeed+"");
+        */
+
 
 
         //move to out of screen

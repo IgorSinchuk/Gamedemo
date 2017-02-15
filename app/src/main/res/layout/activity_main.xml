@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#17195A"
     android:gravity="center"
-    tools:context="com.demo.igorsinchuk.gamedemo.main">
+    tools:context="com.demo.igorsinchuk.game.main">
 
     <FrameLayout
         android:id="@+id/frame"

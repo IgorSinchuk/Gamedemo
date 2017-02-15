@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.demo.igorsinchuk.gamedemo">
+    package="com.demo.igorsinchuk.game">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".start"
+            android:name="com.demo.igorsinchuk.game.start"
             android:screenOrientation="portrait">
             >
             <intent-filter>
@@ -19,12 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".result"
+            android:name="com.demo.igorsinchuk.game.result"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".main"
+            android:name="com.demo.igorsinchuk.game.main"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".info"
+        <activity android:name="com.demo.igorsinchuk.game.info"
             android:screenOrientation="portrait">
         </activity>
     </application>

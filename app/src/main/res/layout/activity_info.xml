@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#000"
-    tools:context="com.demo.igorsinchuk.gamedemo.info"
+    tools:context="com.demo.igorsinchuk.game.info"
     android:weightSum="1">
 
 
